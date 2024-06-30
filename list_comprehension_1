@@ -1,0 +1,33 @@
+def list_comprehension(i,j,k,n):
+    res = []
+    for a in range(i+1):
+        for b in range(j+1):
+            for c in range(k+1):
+                k1 = [a,b,c]
+                res.append(k1)
+    # return res
+    res1 = []
+    
+    for i1 in (res):
+        if sum(i1) != n:
+            res1.append(i1)
+    return res1
+
+OTHER WAY TO SOLVE THIS BY USING LIST COMPREHENSION
+    res = [(a, b, c) for a in range(i + 1) for b in range(j + 1) for c in range(k + 1) if a + b + c != n]
+    return res
+
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    print(list_comprehension(x,y,z,n))
+
+SAMPLE INPUT:
+1
+1
+1
+2
+SAMPLE OUTPUT:
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
